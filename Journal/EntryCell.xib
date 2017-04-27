@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="60" id="iMF-L7-9cB" customClass="EntryCell" customModule="Journal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iMF-L7-9cB" id="NdT-5J-wiZ">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Journal Entry Title Title Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sR7-YL-yr6">
+                        <rect key="frame" x="16" y="6" width="351" height="21"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                        <color key="textColor" red="0.2470588235" green="0.76470588240000004" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAD-P1-QLR">
+                        <rect key="frame" x="16" y="36" width="181" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="181" id="Ur1-ZM-Tod"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Added on: 04.26.17 - 8:07 PM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbB-qf-5ah">
+                        <rect key="frame" x="16" y="57" width="181" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="RmQ-Es-Nbd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lbB-qf-5ah" firstAttribute="top" secondItem="uAD-P1-QLR" secondAttribute="bottom" constant="8" symbolic="YES" id="5Kk-Xg-6e4"/>
+                    <constraint firstItem="sR7-YL-yr6" firstAttribute="leading" secondItem="uAD-P1-QLR" secondAttribute="leading" id="68c-BK-ZY5"/>
+                    <constraint firstItem="uAD-P1-QLR" firstAttribute="leading" secondItem="lbB-qf-5ah" secondAttribute="leading" id="Lda-sx-kQS"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="lbB-qf-5ah" secondAttribute="bottom" constant="-1.5" id="MTs-jl-kZB"/>
+                    <constraint firstItem="sR7-YL-yr6" firstAttribute="top" secondItem="NdT-5J-wiZ" secondAttribute="topMargin" constant="-2" id="QSH-3F-9b2"/>
+                    <constraint firstItem="uAD-P1-QLR" firstAttribute="trailing" secondItem="lbB-qf-5ah" secondAttribute="trailing" id="SHC-8U-pYe"/>
+                    <constraint firstItem="uAD-P1-QLR" firstAttribute="top" secondItem="sR7-YL-yr6" secondAttribute="bottom" constant="9" id="XRa-gA-zIi"/>
+                    <constraint firstItem="sR7-YL-yr6" firstAttribute="leading" secondItem="NdT-5J-wiZ" secondAttribute="leadingMargin" constant="8" id="hf6-ya-Iul"/>
+                    <constraint firstItem="sR7-YL-yr6" firstAttribute="trailing" secondItem="NdT-5J-wiZ" secondAttribute="trailingMargin" id="twm-gQ-ClN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bodyLabel" destination="uAD-P1-QLR" id="Npz-Pm-t9Z"/>
+                <outlet property="dateLabel" destination="lbB-qf-5ah" id="2bQ-qd-6sb"/>
+                <outlet property="titleLabel" destination="sR7-YL-yr6" id="ojy-1k-JM5"/>
+            </connections>
+            <point key="canvasLocation" x="-83.5" y="-190"/>
+        </tableViewCell>
+    </objects>
+</document>
