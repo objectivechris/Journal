@@ -220,7 +220,7 @@
                     </view>
                     <connections>
                         <outlet property="entryBodyTextView" destination="4PO-ep-bli" id="cem-R0-fZo"/>
-                        <outlet property="titleTextField" destination="I7E-8Z-KgS" id="kdl-gl-gVD"/>
+                        <outlet property="updateTitleTextField" destination="I7E-8Z-KgS" id="IBi-Vc-6vM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jZ-d0-XQk" userLabel="First Responder" sceneMemberID="firstResponder"/>

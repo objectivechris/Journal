@@ -20,7 +20,7 @@ class AddEntryViewController: UIViewController, UITextViewDelegate, UITextFieldD
     @IBAction func save(_ sender: Any) {
         
         guard let enteredText = entryBodyTextView.text else { return }
-         guard let titleText = titleTextField.text else { return }
+        guard let titleText = titleTextField.text else { return }
         
         if enteredText.isEmpty || entryBodyTextView.text == "Type anything..." || titleText.isEmpty || titleTextField.placeholder == "Enter Title" {
             let alert = UIAlertController(title: "Please type something", message: "Your entry or title was left blank.", preferredStyle: .alert)
