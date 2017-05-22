@@ -8,17 +8,21 @@
 
 import UIKit
 
-class EntriesTableViewController: UITableViewController {
+class EntriesTableViewController: UITableViewController, UISearchBarDelegate {
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var entries: [Entry] = []
     var selectedIndex: Int!
+    
+    var filteredData: [Entry] = []
     
     let cellIdentifier = "EntryCell"
     
     func fetchData() {
         do {
             entries = try context.fetch(Entry.fetchRequest())
+            filteredData = entries.reversed()
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -35,6 +39,7 @@ class EntriesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        createSearchBar()
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -45,14 +50,22 @@ class EntriesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "updateVC" {
             let updateVC = segue.destination as! UpdateEntryViewController
-            updateVC.entry = entries[selectedIndex!]
+            updateVC.entry = filteredData[selectedIndex!]
         }
+    }
+    
+    func createSearchBar() {
+        let searchBar = UISearchBar()
+        searchBar.showsCancelButton = false
+        searchBar.placeholder = "Search"
+        searchBar.delegate = self
+    
+        self.navigationItem.titleView = searchBar
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return entries.count
+        return filteredData.count
     }
 
     
@@ -60,11 +73,11 @@ class EntriesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! EntryCell
 
         // Configure the cell...
-        let date = entries.reversed()[indexPath.row].date
-        let time = entries.reversed()[indexPath.row].time
+        let date = filteredData[indexPath.row].date
+        let time = filteredData[indexPath.row].time
         
-        cell.titleLabel.text = entries.reversed()[indexPath.row].title
-        cell.bodyLabel.text = entries.reversed()[indexPath.row].body
+        cell.titleLabel.text = filteredData[indexPath.row].title
+        cell.bodyLabel.text = filteredData[indexPath.row].body
         
         if let date = date, let time = time {
             let timestamp = "\(date) - \(time)"
@@ -77,18 +90,18 @@ class EntriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedIndex = indexPath.row
-        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "updateVC", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
  
-            let entry = self.entries[indexPath.row]
+            let entry = self.filteredData[indexPath.row]
             self.context.delete(entry)
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
-            self.entries.remove(at: indexPath.row)
+            self.filteredData.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         }
@@ -102,5 +115,17 @@ class EntriesTableViewController: UITableViewController {
         
         
         return [delete,share]
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            filteredData = entries.reversed()
+        } else {
+            filteredData = entries.filter { ($0.title?.lowercased().contains(searchText.lowercased()))! }
+        }
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
