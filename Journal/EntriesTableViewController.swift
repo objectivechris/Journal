@@ -16,6 +16,8 @@ class EntriesTableViewController: UITableViewController, UISearchBarDelegate {
     
     var filteredData: [Entry] = []
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     let cellIdentifier = "EntryCell"
     
     func fetchData() {
@@ -39,7 +41,6 @@ class EntriesTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        createSearchBar()
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -52,15 +53,6 @@ class EntriesTableViewController: UITableViewController, UISearchBarDelegate {
             let updateVC = segue.destination as! UpdateEntryViewController
             updateVC.entry = filteredData[selectedIndex!]
         }
-    }
-    
-    func createSearchBar() {
-        let searchBar = UISearchBar()
-        searchBar.showsCancelButton = false
-        searchBar.placeholder = "Search"
-        searchBar.delegate = self
-    
-        self.navigationItem.titleView = searchBar
     }
 
     // MARK: - Table view data source
@@ -127,5 +119,9 @@ class EntriesTableViewController: UITableViewController, UISearchBarDelegate {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
