@@ -77,4 +77,8 @@ class UpdateEntryViewController: UIViewController, UITextViewDelegate, UITextFie
         textField.placeholder = ""
         textField.textColor = .black
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.textColor = UIColor(red: 63.0/255.0, green: 195.0/255.0, blue: 128.0/255.0, alpha: 1.0)
+    }
 }
