@@ -12,6 +12,7 @@ class EntriesTableViewController: UITableViewController {
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var entries: [Entry] = []
+    var selectedIndex: Int!
     
     let cellIdentifier = "EntryCell"
     
@@ -40,6 +41,13 @@ class EntriesTableViewController: UITableViewController {
         let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "updateVC" {
+            let updateVC = segue.destination as! UpdateEntryViewController
+            updateVC.entry = entries[selectedIndex!]
+        }
+    }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,7 +75,10 @@ class EntriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedIndex = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "updateVC", sender: self)
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

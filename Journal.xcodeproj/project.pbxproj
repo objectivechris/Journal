@@ -18,6 +18,7 @@
 		D069C93E1EB1640200A647D4 /* JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C93D1EB1640200A647D4 /* JournalTests.swift */; };
 		D069C9491EB1640200A647D4 /* JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C9481EB1640200A647D4 /* JournalUITests.swift */; };
 		D069C9571EB1659A00A647D4 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C9561EB1659A00A647D4 /* EntriesTableViewController.swift */; };
+		F6460D3E1ED346D8005BE8CB /* UpdateEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6460D3D1ED346D8005BE8CB /* UpdateEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D069C9481EB1640200A647D4 /* JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITests.swift; sourceTree = "<group>"; };
 		D069C94A1EB1640200A647D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D069C9561EB1659A00A647D4 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
+		F6460D3D1ED346D8005BE8CB /* UpdateEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateEntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				D069C9251EB1640200A647D4 /* AppDelegate.swift */,
 				D069C9561EB1659A00A647D4 /* EntriesTableViewController.swift */,
 				D069C9271EB1640200A647D4 /* AddEntryViewController.swift */,
+				F6460D3D1ED346D8005BE8CB /* UpdateEntryViewController.swift */,
 				D069ACB91EB1716700B81A04 /* EntryCell.swift */,
 				D069C9291EB1640200A647D4 /* Main.storyboard */,
 				D069ACB71EB16EE800B81A04 /* EntryCell.xib */,
@@ -205,7 +208,7 @@
 				TargetAttributes = {
 					D069C9211EB1640200A647D4 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = L282C3DF98;
+						DevelopmentTeam = 66ZL962QWK;
 						ProvisioningStyle = Automatic;
 					};
 					D069C9381EB1640200A647D4 = {
@@ -277,6 +280,7 @@
 			files = (
 				D069C9571EB1659A00A647D4 /* EntriesTableViewController.swift in Sources */,
 				D069ACBA1EB1716700B81A04 /* EntryCell.swift in Sources */,
+				F6460D3E1ED346D8005BE8CB /* UpdateEntryViewController.swift in Sources */,
 				D069C92E1EB1640200A647D4 /* Journal.xcdatamodeld in Sources */,
 				D069C9281EB1640200A647D4 /* AddEntryViewController.swift in Sources */,
 				D069C9261EB1640200A647D4 /* AppDelegate.swift in Sources */,
@@ -431,7 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = L282C3DF98;
+				DEVELOPMENT_TEAM = 66ZL962QWK;
 				INFOPLIST_FILE = Journal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.objectivechris.Journal;
@@ -444,7 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = L282C3DF98;
+				DEVELOPMENT_TEAM = 66ZL962QWK;
 				INFOPLIST_FILE = Journal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.objectivechris.Journal;
