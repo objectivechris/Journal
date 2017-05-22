@@ -79,6 +79,6 @@ class UpdateEntryViewController: UIViewController, UITextViewDelegate, UITextFie
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.textColor = UIColor(red: 63.0/255.0, green: 195.0/255.0, blue: 128.0/255.0, alpha: 1.0)
+        textField.textColor = UIColor(red: 63, green: 195, blue: 128)
     }
 }

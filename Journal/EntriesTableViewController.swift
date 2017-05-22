@@ -102,10 +102,9 @@ class EntriesTableViewController: UITableViewController, UISearchBarDelegate {
             print("Share")
         }
         
-        delete.backgroundColor = UIColor(red: 0/255, green: 177/255, blue: 106/255, alpha: 1.0)
-        share.backgroundColor = UIColor(red: 54/255, green: 215/255, blue: 183/255, alpha: 1.0)
-        
-        
+        delete.backgroundColor = UIColor(red: 0, green: 177, blue: 106)
+        share.backgroundColor = UIColor(red: 54, green: 215, blue: 183)
+
         return [delete,share]
     }
     

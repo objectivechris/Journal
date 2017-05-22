@@ -18,6 +18,7 @@
 		D069C93E1EB1640200A647D4 /* JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C93D1EB1640200A647D4 /* JournalTests.swift */; };
 		D069C9491EB1640200A647D4 /* JournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C9481EB1640200A647D4 /* JournalUITests.swift */; };
 		D069C9571EB1659A00A647D4 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C9561EB1659A00A647D4 /* EntriesTableViewController.swift */; };
+		F60635531ED37CE400BBDDC9 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60635521ED37CE400BBDDC9 /* UIColor+Custom.swift */; };
 		F6460D3E1ED346D8005BE8CB /* UpdateEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6460D3D1ED346D8005BE8CB /* UpdateEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		D069C9481EB1640200A647D4 /* JournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalUITests.swift; sourceTree = "<group>"; };
 		D069C94A1EB1640200A647D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D069C9561EB1659A00A647D4 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
+		F60635521ED37CE400BBDDC9 /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		F6460D3D1ED346D8005BE8CB /* UpdateEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateEntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				D069C9251EB1640200A647D4 /* AppDelegate.swift */,
+				F60635521ED37CE400BBDDC9 /* UIColor+Custom.swift */,
 				D069C9561EB1659A00A647D4 /* EntriesTableViewController.swift */,
 				D069C9271EB1640200A647D4 /* AddEntryViewController.swift */,
 				F6460D3D1ED346D8005BE8CB /* UpdateEntryViewController.swift */,
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60635531ED37CE400BBDDC9 /* UIColor+Custom.swift in Sources */,
 				D069C9571EB1659A00A647D4 /* EntriesTableViewController.swift in Sources */,
 				D069ACBA1EB1716700B81A04 /* EntryCell.swift in Sources */,
 				F6460D3E1ED346D8005BE8CB /* UpdateEntryViewController.swift in Sources */,
