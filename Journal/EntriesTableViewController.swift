@@ -42,7 +42,7 @@ class EntriesTableViewController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
 
         tableView.estimatedRowHeight = 60
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         
         let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: cellIdentifier)
